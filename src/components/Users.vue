@@ -1,22 +1,19 @@
 <template>
-  <div class="ui four column doubling stackable grid container">
-    <div class='ui centered'>
-      <table class="ui celled fixed table">
-          <thead>
-            <tr class="center aligned">
-              <th>User Name</th>
-              <th>Name</th>
-              <th>Age</th>
-              <th>Email</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            <user v-on:delete-user="deleteUser" v-for="user in users" v-bind:user="user" :key="user"></user>
-          </tbody>
-      </table>
+    <div class='ui'>
+          <table class="ui celled table">
+            <thead>
+              <tr class="center aligned">
+                <th class="three wide column"> User Name</th>
+                <th class="four wide column">Name</th>
+                <th class="four wide column">Age</th>
+                <th class="four wide column">Email</th>
+                <th class="three wide column">Actions</th>
+              </tr>
+            </thead>
+      </table>     
+          <user v-on:delete-user="deleteUser" v-for="user in users" v-bind:user="user" :key="user"></user>
+          
     </div>
-  </div>
 </template>
 
 <script>

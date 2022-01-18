@@ -1,5 +1,5 @@
 <template>
-  <div class='ui basic content center aligned segment'>
+  <div class='ui'>
     Click here to create a new user: <button class='ui basic button icon' v-on:click="openForm" v-show="!Creating">
       <i class='plus icon'></i>
     </button>
@@ -22,14 +22,12 @@
             <label>Email</label>
             <input type='text' v-model="emailText" ref='email' defaultValue="" />
           </div>
-          <div class='ui two button attached buttons'>
             <button class='ui basic green button' v-on:click="sendForm()">
               Create User
             </button>
             <button class='ui basic red button' v-on:click="closeForm">
               Close Form
             </button>
-          </div>
         </div>
       </div>
     </div>
@@ -68,7 +66,7 @@ export default {
             });
             this.newUserText = '';
         }
-        this.isCreating = false;
+        this.Creating = false;
     }
   },
 };

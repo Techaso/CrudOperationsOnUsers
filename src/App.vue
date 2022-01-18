@@ -2,6 +2,8 @@
   <div id="app">
     <p>Current total number of users: {{users.length}}</p>
     <add-user-form v-on:create-user="addUser"></add-user-form>
+    <br>
+    <br>
     <Users v-bind:users="users"></Users>
   </div>
 </template>
