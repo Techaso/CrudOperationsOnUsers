@@ -1,18 +1,57 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <p>Current total number of users: {{users.length}}</p>
+    <add-user-form v-on:create-user="addUser"></add-user-form>
+    <Users v-bind:users="users"></Users>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import "semantic-ui-css/semantic.min.css";
+import Users from './components/Users.vue'
+// import CreateUser from './components/CreateUser.vue';
+import addUserForm from './components/addUserForm.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    Users,
+    // CreateUser,
+    addUserForm
+  },
+  data() {
+        return {
+            users: [{
+              username: 'rkkasotiya',
+              name: 'Ramesh Kasotiya',
+              age: 23,
+              email: 'rkkasotiya@gmail.com',
+            },
+            {
+              username: 'techaso',
+              name: 'Techaso Kasotiya',
+              age: 25,
+              email: 'rktechaso@gmail.com',
+            },
+            {
+              username: 'jitendra',
+              name: 'Jitendra Kumar',
+              age: 24,
+              email: 'jitu@gmail.com',
+            }]
+        }
+    },
+    methods:{
+      addUser(data) {
+        console.log('app.vue file ', data)
+        this.users.push({
+          username: data.username,
+          name: data.name,
+          age: data.age,
+          email: data.email
+      });
+    }
+    }
 }
 </script>
 
