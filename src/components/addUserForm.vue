@@ -1,5 +1,6 @@
 <template>
-  <div class='ui'>
+  <!-- Form for creating new user -->
+    <div class='ui'>
     Click here to create a new user: <button class='ui basic button icon' v-on:click="openForm" v-show="!Creating">
       <i class='plus icon'></i>
     </button>
@@ -36,6 +37,8 @@
 
 <script>
 export default {
+
+  // initial values for create user form fields, this is used for binding these variables with form inputs
   data() {
     return {
       usernameText: '',
@@ -53,6 +56,7 @@ export default {
       this.Creating = false;
     },
     sendForm() {
+        // if all input data fields are not empty then emit 'create-user' named event with submitted data and catch this event in App.vue script using v-on:create-user="addUser". Define this addUser() function there
         if (this.usernameText.length > 0 && this.nameText.length > 0 && this.ageText.length > 0 && this.emailText.length > 0) {
             const username = this.usernameText;
             const name = this.nameText;
@@ -66,6 +70,7 @@ export default {
             });
             this.newUserText = '';
         }
+        // Close the form after data is submitted (create user button is clicked)
         this.Creating = false;
     }
   },

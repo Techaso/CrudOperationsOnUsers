@@ -1,26 +1,33 @@
-<template>
+
+<template><!-- Homepage -->
   <div id="app">
     <p>Current total number of users: {{users.length}}</p>
-    <add-user-form v-on:create-user="addUser"></add-user-form>
-    <br>
-    <br>
+
+    <!-- Create a new user -->
+    <add-user-form v-on:create-user="addUser"></add-user-form><br><br>
+
+    <!-- List of all users -->
     <Users v-bind:users="users"></Users>
   </div>
 </template>
 
 <script>
+// for styling this web-app
 import "semantic-ui-css/semantic.min.css";
-import Users from './components/Users.vue'
-// import CreateUser from './components/CreateUser.vue';
+
+// for including all the required components which are used in this App.vue script
+import Users from './components/Users.vue';
 import addUserForm from './components/addUserForm.vue';
 
 export default {
   name: 'App',
+
+  // Components/vue files which are used in this App.vue script
   components: {
     Users,
-    // CreateUser,
     addUserForm
   },
+  // users data
   data() {
         return {
             users: [{
@@ -44,6 +51,7 @@ export default {
         }
     },
     methods:{
+      // do this when 'create-user' event happens in addUserForm.vue component
       addUser(data) {
         console.log('app.vue file ', data)
         this.users.push({

@@ -1,5 +1,6 @@
 <template>
     <div class="ui celled table grid">
+        <!-- Storing users data -->
         <tbody>
         <tr v-show="!Editing" class="center aligned">
             <td data-label="User Name" class="three wide column">{{user.username}}</td>
@@ -17,7 +18,7 @@
         </tr>
         </tbody>
 
-        <!-- form is visible when we are in editing mode -->
+        <!-- form is visible when we are in editing mode i.e. Editing="true", by default we're setting it as 'false' -->
         <div v-show="Editing">
             <br>
         <div class='ui form'>
@@ -70,6 +71,7 @@ export default {
     },
     methods:{
         deleteUser(user) {
+            // emit 'delete-user' named event and catch it in Users.vue script like this v-on:delete-user="deleteUser" and define this deleteUser() function in that vue script
             this.$emit('delete-user', user);
         },
         showForm(){
