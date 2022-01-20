@@ -6,15 +6,14 @@
               <tr class="center aligned">
                 <th class="three wide column">User Name</th>
                 <th class="four wide column">Name</th>
-                <th class="four wide column">Age</th>
+                <th class="two wide column">Age</th>
                 <th class="four wide column">Email</th>
                 <th class="three wide column">Actions</th>
               </tr>
             </thead>
-      </table>
+          </table>
           <!-- load all users' data in the table  -->
-          <user v-on:delete-user="deleteUser" v-for="user in users" v-bind:user="user" :key="user"></user>
-          
+          <user v-on:delete-user="deleteUser" v-for="user in users" v-bind:user="user" :key="user"></user>      
     </div>
 </template>
 

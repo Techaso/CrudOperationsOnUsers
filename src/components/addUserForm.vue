@@ -1,9 +1,9 @@
 <template>
   <!-- Form for creating new user -->
     <div class='ui'>
-    Click here to create a new user: <button class='ui basic button icon' v-on:click="openForm" v-show="!Creating">
+    <p  v-show="!Creating">Click here to create a new user: <button class='ui basic button icon' v-on:click="openForm" v-show="!Creating">
       <i class='plus icon'></i>
-    </button>
+    </button></p>
     <div class='ui centered card' v-show="Creating">
       <div class='content'>
         <div class='ui form'>
