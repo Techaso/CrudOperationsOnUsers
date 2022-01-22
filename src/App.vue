@@ -1,11 +1,9 @@
-
 <template><!-- Homepage -->
   <div id="app">
+    <h1 style="color:green;">Users Management Page</h1>
     <p>Current total number of users: {{users.length}}</p>
-
     <!-- Create a new user -->
     <add-user-form v-on:create-user="addUser"></add-user-form><br><br>
-
     <!-- List of all users -->
     <Users v-bind:users="users"></Users>
   </div>
@@ -73,5 +71,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+body {
+  background-image: url("./assets/img/bg.png");
 }
 </style>

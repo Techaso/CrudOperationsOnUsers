@@ -1,4 +1,4 @@
-# usersinfo-app
+# Users Management Page
 
 ## Project setup
 ```
